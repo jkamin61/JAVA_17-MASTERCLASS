@@ -1,4 +1,4 @@
-package org.example.traditional_switch_challange;
+package org.example.traditional_switch_challenge;
 
 public class Main {
     public static void main(String[] args) {
