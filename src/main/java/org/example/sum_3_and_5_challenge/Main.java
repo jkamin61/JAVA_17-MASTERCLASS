@@ -11,7 +11,7 @@ public class Main {
                 count++;
             }
             if (count == 5) {
-                System.out.println("Ending program. 5 numbers have been already found meeting the requirements.");
+                System.out.println("Ending program. 5 numbers that meets the requirements have already been found.");
                 break;
             }
         }
