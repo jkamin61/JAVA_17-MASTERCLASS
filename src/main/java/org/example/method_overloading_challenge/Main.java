@@ -1,4 +1,4 @@
-package org.example.method_overloading_challange;
+package org.example.method_overloading_challenge;
 
 public class Main {
     public static void main(String[] args) {
