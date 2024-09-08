@@ -25,8 +25,8 @@ public class MinAndMax {
                     max = val;
                 }
                 System.out.println("Track of numbers: ");
-                System.out.println("Max value: "+max);
-                System.out.println("Min value: "+min);
+                System.out.println("Max value: " + max);
+                System.out.println("Min value: " + min);
                 loopCount++;
             } catch (NumberFormatException e) {
                 System.out.println("Process exit");
