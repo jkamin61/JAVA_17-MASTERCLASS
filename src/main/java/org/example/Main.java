@@ -1,6 +1,5 @@
 package org.example;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Main {
@@ -12,7 +11,6 @@ public class Main {
     public static int[] bubbleSort(int[] arr) {
         int n = arr.length;
         boolean swapped;
-
         do {
             swapped = false;
             for (int i = 1; i < n; i++) {
@@ -25,6 +23,7 @@ public class Main {
             }
             n--;
         } while (swapped);
+
         return arr;
     }
 
