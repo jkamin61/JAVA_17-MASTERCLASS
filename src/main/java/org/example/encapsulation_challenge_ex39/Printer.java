@@ -1,4 +1,4 @@
-package org.example.encapsulation_challenge;
+package org.example.encapsulation_challenge_ex39;
 
 public class Printer {
     private int tonerLevel;
@@ -19,11 +19,15 @@ public class Printer {
     }
 
     public int addToner(int tonerAmount) {
-        tonerLevel += tonerAmount;
-        if (tonerAmount < 0 || tonerAmount > 100) {
+        if (tonerAmount <= 0 || tonerAmount > 100) {
             System.out.println("Wrong value for tonerAmount. Stay in range 1 - 100");
             return -1;
         }
+        int tempAmount = tonerLevel + tonerAmount;
+        if (tempAmount > 100) {
+            return -1;
+        }
+        tonerLevel += tonerAmount;
         return tonerLevel;
     }
 
