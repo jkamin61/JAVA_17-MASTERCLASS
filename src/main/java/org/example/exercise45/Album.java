@@ -27,10 +27,9 @@ public class Album {
     }
 
     private Song findSong(String title) {
-        var iterator = songs.listIterator();
-        while (!iterator.hasNext()) {
-            if (iterator.next().getTitle().equals(title)) {
-                return iterator.next();
+        for (Song currentSong : songs) {
+            if (currentSong.getTitle().equals(title)) {
+                return currentSong;
             }
         }
         System.out.println("Song not found");
