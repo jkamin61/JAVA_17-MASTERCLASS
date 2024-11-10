@@ -1,6 +1,5 @@
 package org.example.linked_list_challenge;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -37,30 +36,48 @@ public class Main {
                 (M)enu
                 (Q)uit
                 """;
+        boolean goingForward = true;
         while (!exit) {
-            System.out.println(options);
             var iterator = placesToVisit.listIterator();
-            char menu = scanner.next().charAt(0);
-            if (menu == 'Q' || menu == 'q') {
-                System.out.println("Exiting..");
-                exit = true;
-            }
-            if (menu == 'F' || menu == 'f') {
-                System.out.println(iterator.next());
-            }
-            if (menu == 'B' || menu == 'b') {
-                if (iterator.hasPrevious()) {
-                    System.out.println(iterator.previous());
-                } else System.out.println("No previous elements");
-            }
-            if (menu == 'L' || menu == 'l') {
-                System.out.println(placesToVisit);
-
-            }
-            if (menu == 'M' || menu == 'm') {
+            while (iterator.hasNext()) {
                 System.out.println(options);
-            }
+                char menu = scanner.next().charAt(0);
+                if (menu == 'Q' || menu == 'q') {
+                    System.out.println("Exiting..");
+                    exit = true;
+                    break;
+                }
+                if (menu == 'F' || menu == 'f') {
+                    if (!goingForward) {
+                        if (iterator.hasNext()) iterator.next();
+                        goingForward = true;
+                    }
+                    if (iterator.hasNext()) {
+                        System.out.println(iterator.next());
+                    } else {
+                        System.out.println("No next elements");
+                    }
+                }
+                if (menu == 'B' || menu == 'b') {
+                    if (goingForward) {
+                        if (iterator.hasPrevious()) iterator.previous();
+                        goingForward = false;
+                    }
+                    if (iterator.hasPrevious()) {
+                        System.out.println(iterator.previous());
+                    } else {
+                        System.out.println("No previous elements");
+                    }
+                }
 
+                if (menu == 'L' || menu == 'l') {
+                    System.out.println(placesToVisit);
+
+                }
+                if (menu == 'M' || menu == 'm') {
+                    System.out.println(options);
+                }
+            }
         }
     }
 
